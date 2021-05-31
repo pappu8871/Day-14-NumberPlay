@@ -1,14 +1,16 @@
 package com.classpractice.numberplay;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.function.Function;
 import java.util.function.Predicate;
-import java.util.stream.Collectors;
 
-public class NumberPlayUC5 {
-	 public static void main(String[] args) {
-			//  Use collection
+public class NumberPlayUC6 {
+  
+	public static void main(String[] args){
+	
+	// Use collection
 				List<Integer>myNumberList = new ArrayList<Integer>();
 				    for(int i = 0; i<5; i++) myNumberList.add(i);
 				
@@ -23,5 +25,20 @@ public class NumberPlayUC5 {
 				    		                .orElse(null);
          
 				    		System.out.println("peek first Even Value " + first);
-	        }
+	                 //Minimum Even number
+				    		Integer min =  myNumberList.stream()
+				    					.filter(isEvenFunction)
+				    					.min((n1,n2) -> n1-n2)
+				    					.orElse(null);
+ 
+		    		         System.out.println("peek min Value " + min);		
+                 // Maximum Even Number
+		    		  Integer max =  myNumberList.stream()
+		    				  		.filter(isEvenFunction)
+    		                     	.max(Comparator.comparing(Integer::intValue))
+    		                     	.orElse(null);
+
+    		             System.out.println("peek max Value " + max);		    		
+
+}
 }
