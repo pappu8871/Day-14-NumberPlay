@@ -6,7 +6,8 @@ import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
-public class NumberPlayUC3 {
+public class NumberPlayUC4 {
+
 	 public static void main(String[] args) {
 			//  Use collection
 				List<Integer>myNumberList = new ArrayList<Integer>();
@@ -20,6 +21,5 @@ public class NumberPlayUC3 {
 				    		                 .map(toDoubleFunction)
 				    		                 .collect(Collectors.toList());
 				    	System.out.println("Stream Print Double List " + streamList);
-	       //Store the Transformed double value in to a new list			  
-	 }
-}
+	        }
+       }
